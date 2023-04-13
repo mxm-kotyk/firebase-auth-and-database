@@ -1,37 +1,43 @@
-<article class="example" id="uk">
-  <h1>HTML-partials</h1>
+<button type="button" class="auth-modal-button auth-modal-open">Sign In</button>
+<button type="button" class="auth-modal-button sign-out-button">Sign Out</button>
 
-  <!--
-    ❗️❗️❗️ The path to images from the HTML partial
-    is the same as from the index.html file
-  -->
-  <img src="images/logo.png" alt="" width="320" />
+<div class="auth-modal-backdrop auth-modal-is-hidden">
+  <div class="auth-modal">
+    <button type="button" class="auth-modal-close">X</button>
+    <div class="form-box login-form-box">
+      <h2 class="auth-title">Sign In</h2>
+      <form class="login-form auth-form">
+        <div class="input-wrapper">
+          <input type="email" name="email" id="login-email" placeholder="." class="auth-input">
+          <label for="login-email" class="auth-input-label">Email</label>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" name="login-password" id="login-password" placeholder="." class="auth-input">
+          <label for="login-password" class="auth-input-label">Password</label>
+        </div>
+        <button type="submit" class="login-button auth-button">Sign In</button>
+      </form>
+      <p class="auth-switch-form-text">Don't have an account yet?</p>
+      <button type="button" class="auth-switch-form-button show-register">Create one here</button>
+    </div>
 
-  <p>
-    The
-    <a
-      href="https://github.com/posthtml/posthtml-include"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      posthtml-include
-    </a>
-    plugin allows you to add code from other HTML files (fragments) to HTML page
-    files. Fragments are stored in the <code>src/partials</code> folder. The
-    addition occurs when compiling page files, such as <code>index.html</code>.
-  </p>
 
-  <p>
-    This <code>example.html</code> file is an example of such a snippet, with
-    the markup of a certain part of the main page. This is very convenient for
-    team development on student projects, when several people write in one HTML
-    file at once.
-  </p>
+    <div class="form-box register-form-box register-hidden">
+      <h2 class="auth-title">Sign Up</h2>
+      <form class="register-form auth-form">
+        <div class="input-wrapper">
+          <input type="email" name="email" id="register-email" placeholder="." class="auth-input">
+          <label for="register-email" class="auth-input-label">Email</label>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" name="register-password" id="register-password" placeholder="." class="auth-input">
+          <label for="register-password" class="auth-input-label">Password</label>
+        </div>
+        <button type="submit" class="register-button auth-button">Sign Up</button>
+      </form>
+      <p class="auth-switch-form-text">Already registered?</p>
+      <button type="button" class="auth-switch-form-button show-login">Sign In</button>
+    </div>
 
-  <p>
-    The syntax for adding a fragment to the main file is:
-    <code> &lt;include src="./partials/filename.html"&gt;&lt;/include&gt;</code>
-  </p>
-
-  <div class="background"></div>
-</article>
+  </div>
+</div>
